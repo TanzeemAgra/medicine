@@ -2,9 +2,10 @@ name: Deploy to Amazon ECS
 
 on:
   push:
-    branches: webapp
-    # paths:
-    #   - webapp/**
+    branches:
+      - webapp
+    paths:
+      - webapp/**
     
     #paths: ['webapp/**']
     
