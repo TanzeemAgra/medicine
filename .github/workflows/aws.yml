@@ -4,11 +4,12 @@ on:
   push:
     branches:
     - webapp
+  
   pull_request:
     branches:
     - webapp
   
-  paths: ['webapp/**']
+  #paths: ['webapp/**']
     
   #pull_request:
     # paths: 
