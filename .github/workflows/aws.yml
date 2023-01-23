@@ -9,7 +9,7 @@ on:
     branches:
     - webapp
   
-  #paths: ['webapp/**']
+  paths: ['webapp/**']
     
   #pull_request:
     # paths: 
@@ -22,7 +22,7 @@ env:
   ECS_CLUSTER: medicine                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: medicine           # set this to the name of the container in the
+  CONTAINER_NAME: medicine123           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 permissions:
