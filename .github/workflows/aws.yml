@@ -3,9 +3,10 @@ name: Deploy to Amazon ECS
 on:
   push:
     branches:
-      - webapp
-    paths:
-      - webapp/**
+    - webapp
+  pull_request:
+    branches:
+    - webapp
     
     #paths: ['webapp/**']
     
