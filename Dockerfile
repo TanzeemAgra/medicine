@@ -1,8 +1,12 @@
-FROM ubuntu
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update
-RUN apt-get install apache2 -y
-RUN apt-get install apache2-utils -y
-RUN apt-get clean
-EXPOSE 80
-CMD ["apache2ctl","-D","FOREGROUND"]
+FROM python:6.3-slim
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1 
+RUN mkdir /webapp
+COPY webapp webapp
+WORKDIR /webapp
+RUN pip install --upgrade pip
+COPY requirements.txt /webapp/
+RUN pip install -r requirements.txt
+COPY . /webapp/
+EXPOSE 8000
+CMD ["python","manage.py","runserver","0.0.0.0:8000"]

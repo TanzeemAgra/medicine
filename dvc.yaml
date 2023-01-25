@@ -32,15 +32,17 @@ stages:
 
     #metrics:
     #- reports/scores.json
-      #cache: false
+    #  cache: false
     #- reports/params.json
-      #cache: false
+    #  cache: false
     #outs:
     #- models/model.joblib
 
-  log_production_model:
-    cmd: python src/log_production_model.py --config=params.yaml
-    deps:
-      - src/log_production_model.py
+  mlflow_config:
+  artifacts_dir: artifacts
+  experiment_name: ElasticNet_Expenses
+  run_name: mlops
+  registered_model_name: ElasticNetMedicalExpenses
+  remote_server_uri: http://127.0.0.0:5000/
 
 

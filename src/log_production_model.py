@@ -24,7 +24,7 @@ def log_production_model(config_path):
     mlflow.set_tracking_uri(remote_server_uri)
     runs=mlflow.search_runs([1])
     lowest=runs["metrics.mae"].sort_values(ascending=True)[0]
-    lowest_run_id=runs[runs["metrics.mae"]==lowest]["run_id"][0]
+    lowest_run_id=runs[runs["metrics.mae"]==lowest]["run_id"][1]
     client=MlflowClient()
     for mv in client.search_model_versions(f"name='{model_name}'"):
         mv=dict(mv)
