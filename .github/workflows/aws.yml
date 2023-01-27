@@ -53,8 +53,8 @@ jobs:
         role-duration-seconds: 900 # the ttl of the session, in seconds.
         aws-region: ap-south-1 # use your region here.
     # You can now execute commands that use the credentials👇
-    - name: Serverless deploy
-      run: sls deploy --stage dev
+    #- name: Serverless deploy
+    #  run: sls deploy --stage dev
 
 
     - name: Login to Amazon ECR
