@@ -49,7 +49,7 @@ jobs:
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::013723609256:oidc-provider/token.actions.githubusercontent.com
+        role-to-assume: arn:aws:iam::013723609256:role/Github
         role-duration-seconds: 900 # the ttl of the session, in seconds.
         aws-region: ap-south-1 # use your region here.
     # You can now execute commands that use the credentials👇
