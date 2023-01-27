@@ -11,3 +11,5 @@ jupyterlab
 scikit-learn
 argparse
 mlflow
+django
+psycopg2
