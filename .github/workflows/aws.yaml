@@ -32,22 +32,19 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
-        # with:
-        #   aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        #   aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        #   aws-region: ${{ env.AWS_REGION }}
-        with:
-          role-to-assume: 
-          role-duration-seconds: 900
-          aws-region: ap-south-1
+          with:
+            role-to-assume: ########################### # Update the ARN of the IAM role
+            role-session-name: Github
+            role-session-seconds: 900
+            aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@aaf69d68aa3fb14c1d5a6be9ac61fe15b48453a2
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
