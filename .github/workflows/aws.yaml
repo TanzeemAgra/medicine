@@ -6,7 +6,7 @@ on:
       - "webapp"
 
 env:
-  AWS_REGION: ap-south-1                  # set this to your preferred AWS region, final attempt
+  AWS_REGION: ap-south-1                  # set this to your preferred AWS region, final to final attempt
   ECR_REPOSITORY: medicine          # set this to your Amazon ECR repository name
   ECS_SERVICE: medicine                # set this to your Amazon ECS service name
   ECS_CLUSTER: medicine                 # set this to your Amazon ECS cluster name
